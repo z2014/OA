@@ -1,0 +1,10 @@
+{{extend ("./layout")}}
+
+{{#block ("head")}}
+  <link rel="stylesheet" type="text/css" href="/css/oa-login.css">
+{{/block}}
+
+{{#block ("body")}}
+  <div id="root"></div>
+  <script type="text/javascript" src="/js/oa-login.js"></script>
+{{/block}}

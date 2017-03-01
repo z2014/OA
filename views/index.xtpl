@@ -1,0 +1,169 @@
+{{extend ("./layout")}}
+
+{{#block ("head")}}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/css/online-oa.css">
+{{/block}}
+
+{{#block ("body")}}
+  <div id="root"></div>
+  <script type="text/javascript">
+
+    // 全局变量,由服务端输出
+    var OAglobal = {
+      user: {
+        avatar: '/api/avatar/' + {{currentUser.stuid}},
+        stuid: {{currentUser.stuid}},
+        name: '{{currentUser.name}}',
+        depart: {{currentUser.depart}},
+        role: {{currentUser.role}}
+      }, 
+      meetingRoles:[
+      {
+        key:1,value:'全员大会',text:'全员大会'
+      },{
+        key:2,value:'部门例会',text:'部门例会'
+      },{
+        key:3,value:'其他',text:'其他'
+      }
+      ],
+      currentPeriod: {{currentPeriod}},
+      navList: [
+        {
+          key: '0',
+          text: '首页',
+          link: ''
+        },
+        {
+          key: 'member',
+          text: '成员',
+          link: 'member',
+        },
+        {
+          key: 'report',
+          text: '汇报',
+          link: 'report'
+        },
+        {
+          key:'meeting',
+          text:'会议',
+          link:'meeting'
+        },
+        {
+          key: 'setting',
+          text: '设置',
+          link: 'setting'
+        },
+      ],
+      memberStatus: [
+        {
+          key: '0',
+          text: '未知',
+          value: '未知'
+        },
+        {
+          key: '1',
+          text: '正常',
+          value: '正常'
+        },
+        {
+          key: '2',
+          text: '离职',
+          value: '离职'
+        },
+        {
+          key: '3',
+          text: '黑名单',
+          value: '黑名单'
+        }
+      ],
+      memberRole: [
+        {
+          key: '0',
+          text: '成员',
+          value: '成员'
+        },
+        {
+          key: '1',
+          text: '部长',
+          value: '部长'
+        },
+        {
+          key: '2',
+          text: '行政',
+          value: '行政'
+        },
+        {
+          key: '3',
+          text: '总监/主管',
+          value: '总监/主管'
+        }
+      ],
+      campus: [
+        {
+          text: '屯溪路校区',
+          value: '屯溪路校区',
+          key: '0',
+        },
+        {
+          text: '翡翠湖校区',
+          value: '翡翠湖校区',
+          key: '0',
+        }
+      ],
+      departs: [
+        {
+          text: '无部门',
+          value: '无部门',
+          key: '0'
+        },
+        {
+          text: '办公室',
+          value: '办公室',
+          key: '1'
+        },
+        {
+          text: '推广部',
+          value: '推广部',
+          key: '2'
+        },
+        {
+          text: '技术部',
+          value: '技术部',
+          key: '3'
+        },
+        {
+          text: '视觉设计部',
+          value: '视觉设计部',
+          key: '4'
+        },
+        {
+          text: '产品部',
+          value: '产品部',
+          key: '5'
+        },
+        {
+          text: '视频部',
+          value: '视频部',
+          key: '6'
+        },
+        {
+          text: '编辑部',
+          value: '编辑部',
+          key: '7'
+        },
+        {
+          text: '微信微博部',
+          value: '微信微博部',
+          key: '8'
+        },
+        {
+          text: '策划部',
+          value: '策划部',
+          key: '9'
+        }
+      ]
+    };
+  </script>
+  <script src="/js/online-oa.js"></script>
+{{/block}}
